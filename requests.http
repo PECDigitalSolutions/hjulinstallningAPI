@@ -1,0 +1,67 @@
+### 🔹 Login Request (Token Stored Automatically) ##########
+POST http://localhost:5222/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password"
+}
+
+##########################################
+######## VEHICLES ########################
+##########################################
+
+### 🔹 Get Vehicle by License Plate (Checks Cache, DB, or D&B API)
+GET http://localhost:5222/api/vehicle/DSZ298
+Content-Type: application/json
+
+### 🔹 Add Test Vehicle Data (Stores in Local DB, Doesn't Call D&B)
+POST http://localhost:5222/api/vehicle/set
+Content-Type: application/json
+
+{
+  "licensePlate": "TEST544",
+  "make": "Toyota",
+  "model": "Supra",
+  "year": 2022
+}
+
+#######################################
+####### WOW ###########################
+#######################################
+### 🔹 Get All WoW Characters
+GET http://localhost:5222/api/wowcharacter
+Content-Type: application/json
+
+### 🔹 Get a Specific WoW Character by ID ## change last id for character
+GET http://localhost:5222/api/wowcharacter/9
+Content-Type: application/json
+
+### 🔹 Add a New WoW Character
+POST http://localhost:5222/api/wowcharacter
+Content-Type: application/json
+
+{
+  "name": "philip",
+  "race": "Orc",
+  "class": "Shaman",
+  "spec": "Enhancement",
+  "armorType": "Mail"
+}
+
+### 🔹 Update an Existing WoW Character
+PUT http://localhost:5222/api/wowcharacter/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Jaina Proudmoore",
+  "race": "Human",
+  "class": "Mage",
+  "spec": "Frost",
+  "armorType": "Cloth"
+}
+
+### 🔹 Delete a WoW Character
+DELETE http://localhost:5222/api/wowcharacter/5
+Content-Type: application/json
